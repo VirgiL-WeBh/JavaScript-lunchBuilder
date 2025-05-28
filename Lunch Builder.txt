@@ -1,0 +1,65 @@
+** start of script.js **
+
+let lunches = [];
+lunches[0]="Greens";
+lunches[1]="Corns";
+lunches[2]="Beans";
+function addLunchToEnd(lunchArray, lunchItem) {
+   lunchArray.push(lunchItem);
+   console.log (`${lunchItem} added to the end of the lunch menu.`);
+   return lunchArray;
+}
+console.log(lunches);
+
+function addLunchToStart(lunchArray, lunchItem) {
+lunchArray.unshift(lunchItem);
+console.log(`${lunchItem} added to the start of the lunch menu.`);
+return lunchArray
+}
+
+console.log(lunches);
+
+function removeLastLunch(lunchArray) {
+if (lunchArray.length === 0) {
+  console.log("No lunches to remove.");
+} else {
+const removedLunch = lunchArray.pop();
+console.log(`${removedLunch} removed from the end of the lunch menu.`);
+return lunchArray;
+}
+}
+
+function removeFirstLunch(lunchArray) {
+if(lunchArray.length === 0){
+  console.log("No lunches to remove.");
+}else {
+  let removedConst = lunchArray.shift();
+  console.log(`${removedConst} removed from the start of the lunch menu.`);
+}
+return lunchArray;
+}
+
+function getRandomLunch(lunchArray) {
+if(lunchArray.length === 0){
+console.log("No lunches available.");
+}else {
+let randomConst = Math.floor(Math.random()* lunchArray.length);
+let randomSelected = lunchArray[randomConst];
+console.log(`Randomly selected lunch: ${randomSelected}`);
+}
+}
+getRandomLunch(lunches);
+
+function showLunchMenu(lunchArray){
+if(lunchArray.length === 0) {
+  console.log("The menu is empty.")
+}else {
+let lunchItemsString = lunchArray.join(", ");
+console.log(`Menu items: ${lunchItemsString}`);
+}
+}
+console.log(lunches);
+showLunchMenu(lunches);
+
+** end of script.js **
+
